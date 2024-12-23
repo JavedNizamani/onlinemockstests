@@ -1,0 +1,55 @@
+<%- include('./partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+        <%- include('./partials/sideBar.ejs',{page_name:'admin'}) %>
+            </div>
+        <div class="col-sm-10">
+            <!--Main Content-->
+            <div class="container mt-5">
+                <h1 class="text-warning mb-5 border-bottom">ADMIN LOGIN</h1>
+                <div class="row text-white mb-5">
+
+                    <!-- <div class="alignment col-md-6">
+                    <p class="mx-auto mb-2 st-font text-warning txt-size">Log In</p>
+                    </div> -->
+                    <div class="col-sm-9 mb-5">
+                        <% let inCorrectEmail = " * In Correct Email or Password" %>
+
+                        <form action="/login" method="post">
+                            <div class="row g-3">
+                                
+                                <div class="col-md-8">
+                                <div style="text-align: right; color: rgb(252, 69, 69);">
+                                    <% if(email) { %>
+                                        <%= inCorrectEmail %>
+                                      <% } %> 
+                                    </div>
+
+                                    <div class="alignment no-baffle">
+                                    <label for="email" class="admin-label">Email: </label>
+                                    <input type="email" class="form-control" name="email" required>
+                                </div>  
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="alignment no-baffle">
+                                    <label for="password" class="admin-label">Password :</label>
+                                    <input type="password" class="form-control mt-2" id="password" name="password" minlength="8" required>
+                                </div>
+                                </div>
+                                
+                            </div>
+                            <div class="alignment no-baffle">
+                            
+                            <button class="btn btn-primary mt-2 admin-label" type="submit">LOGIN</button>
+                        </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>

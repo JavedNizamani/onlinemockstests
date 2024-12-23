@@ -1,0 +1,78 @@
+<%- include('./partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+        <%- include('./partials/sideBar.ejs',{page_name:'contacts'}) %>
+            </div>
+        <div class="col-sm-10">
+            <!--Main Content-->
+            <div class="container mt-5">
+                <h1 class="text-warning mb-5 border-bottom">Contact US</h1>
+                <div class="row text-white mb-5">
+                    <p class="mx-auto mb-5">
+                        Do you have any question? Please do not hesitate to contact. 
+                    </p>
+                    <div class="col-sm-9 mb-5">
+                        <form action="">
+                            <div class="row g-3">
+                                <div class="col-md-11">
+                                    <div class="alignment no-baffle">
+                                    <label for="inputName" class="admin-label">Your Name</label>
+                                    <input type="text" class="form-control mt-2" id="inputName">
+                                </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="alignment no-baffle">
+                                    <label for="inputEmail" class="admin-label">Your Email</label>
+                                    <input type="email" class="form-control mt-2" id="inputEmail" required>
+                                </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="alignment no-baffle">
+                                    <label for="inputSubject" class="admin-label">Your Subject</label>
+                                    <input type="text" class="form-control mt-2" id="subject">
+                                </div>
+                                </div>
+                                <div class="col-md-12 mb-10">
+                                    
+                                        <div class="alignment no-baffle">
+                                        <label for="inputTextArea">Your Message</label>
+                                        <textarea class="txt-Area" cols="50" rows="5" id="inputTextArea" required>
+                                    </textarea>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="alignment no-baffle">
+                            <button class="btn btn-primary col-sm-3 mt-2" type="submit">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-3 text-center">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-map-marker-alt fa-2x i-color"></i>
+                                <p>Javed, Sindh, Pakistan</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone fa-2x i-color"></i>
+                                <p>+92314-4482713</p>
+                            </li>
+                            <li>
+                                <i class="fas fa-envelope fa-2x i-color"></i>
+                                <p>javedahmednizamani@gmail.com</p>
+                            </li>
+                        </ul>
+                    </div> 
+                    <div class="alignment" >
+                        <a href="#" target="_blank"><i class="fab fa-facebook-f i-color mx-3"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter i-color mx-3"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram i-color mx-3"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-dribble i-color mx-3"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>

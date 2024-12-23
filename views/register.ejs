@@ -1,0 +1,52 @@
+<%- include('./partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+        <%- include('./partials/sideBar.ejs', {page_name:'register'}) %>
+            </div>
+        <div class="col-sm-10">
+            <!--Main Content-->
+            <div class="container mt-5">
+                <h1 class="text-warning mb-5 border-bottom">REGISTER</h1>
+                <div class="row text-white" >
+                    <div class="alignment no-baffle" style="color: rgb(30, 231, 124); font-size: 1.8rem;">
+                    <p>
+                        Please Enter Your Credentials... 
+                    </p>
+                    </div>
+                    <div class="col-sm-9 mb-5">
+                        <form action="/register" method="post">
+                            <div class="row g-3">
+                                <div class="col-md-11">
+                                    <div class="alignment no-baffle">
+                                    <label for="inputName" class="admin-label">Your Name</label>
+                                    <input type="text" class="form-control mt-2" id="inputName" name="myName">
+                                </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="alignment no-baffle">
+                                    <label for="inputEmail" class="admin-label">Your Email</label>
+                                    <input type="email" class="form-control mt-2" id="inputEmail" name="email" required>
+                                </div>
+                                </div>
+                                <div class="col-md-11">
+                                    <div class="alignment no-baffle">
+                                    <label for="inputPhone" class="admin-label">Phone No.</label>
+                                    <input type="number" class="form-control mt-2" id="phone" name="phone" maxlength="11">
+                                </div>
+                                </div>
+                               
+                                
+                            </div>
+                            <div class="alignment no-baffle">
+                            <button class="btn btn-primary admin-label mt-2" type="submit">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+    <%- include('./partials/footer.ejs') %>

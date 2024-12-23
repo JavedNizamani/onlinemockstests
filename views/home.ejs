@@ -1,0 +1,35 @@
+    <%- include('./partials/header.ejs') %>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+            <%- include('./partials/sideBar.ejs', {page_name:'Home'}) %>
+                </div>
+            <div class="col-sm-10">
+                <!--Main Content-->
+                <div class="container mt-5">
+                    <h1 class="text-warning mb-5 border-bottom">CHOOSE YOUR SUBJECT</h1>
+
+                    <div class="subj-div">
+                      <h3>
+                        <a href="http://localhost:3000/takeTest" class="btn">Networking</a>
+                      </h3>
+                    </div>
+                    
+                      <div class="subj-div">
+                      <h3>
+                        <a href="http://localhost:3000/takeTest" class="btn">C++</a>
+                      </h3>
+                    </div>
+
+                    <div class="subj-div">
+                      <h3>
+                        <a href="http://localhost:3000/takeTest" class="btn">Python</a>
+                      </h3>
+                    </div>
+
+            </div>
+            </div>
+        </div>
+    <%- include('./partials/footer.ejs') %>
+    
+

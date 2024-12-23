@@ -1,0 +1,109 @@
+<%- include('./partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <%- include('./partials/sideBar.ejs',{page_name:'quiz'}) %>
+        </div>
+        <div class="col-sm-10">
+            <!--Main Content-->
+            <% if (questions.length > 0) { %>
+            <div class="container mt-5">
+                <h2 class="text-warning mb-5 border-bottom">MULTIPLE CHOICE QUESTIONS</h2>
+                <div class="row text-white mb-5">
+                    <div class="col-sm-9 mb-5">
+                    <form action="/quiz/<%= currentPage %>" method="post" id="quizForm">
+                            <div class="row g-3">
+                                <div class="col-md-12">
+                                    <% questions.forEach((mcq)=>{ %>
+                                        <h3><%= mcq.myQuestion %></h3>
+                                    <% }) %> 
+                                </div>
+                            </div>
+                                <div class="col-sm-12">
+                                    <div class="mcqs-txt">
+                                        <% questions.forEach((mcq)=>{ %>
+                                        <input type="radio" name="answer" value="A" required><label for="A">
+                                            <h3> <%= mcq.optionA %></h3>
+                                            <% }) %> </label>
+                                    </div>
+                                </div>        
+                                    <div class="col-sm-12">
+                                        <div class="mcqs-txt">
+                                            <input type="radio" name="answer" value="B" required><label for="B">
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3> <%= mcq.optionB %></h3>
+                                            <% }) %> </label>
+                                        </div>
+                                    </div>   
+                                    <div class="col-sm-12">
+                                        <div class="mcqs-txt">
+                                            <input type="radio" name="answer" value="C" required><label for="C">
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3> <%= mcq.optionC %></h3>
+                                            <% }) %> </label>
+                                        </div>
+                                    </div>        
+                                    <div class="col-sm-12">
+                                        <div class="mcqs-txt">
+                                            <input type="radio" name="answer" value="D" required><label for="D">
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3> <%= mcq.optionD %></h3>
+                                            <% }) %> </label>
+                                        </div>
+                                    </div>   
+                                    <div class="col-sm-12">
+                                        <div class="mcqs-txt">
+                                            <input type="radio" name="answer" value="E" required><label for="E">
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3> <%= mcq.optionE %></h3>
+                                            <% }) %> </label>
+                                        </div>
+                                    </div>  
+                        <div class="alignment">
+                            <button type="submit" class="btn btn-primary admin-label">NEXT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+            </div>
+                    <% } else { %>
+                    <div class="container mt-5">
+                        <h2 class="text-warning mb-5 border-bottom">CHECK RESULT</h2>
+                            <div class="row text-white mb-5">
+                                <div class="col-sm-9 mb-5">
+                                    <p>No more questions. Thanks for participating!</p>
+                                        <br>
+                        <h3><a href="http://localhost:3000/myResults">View Result?</a></h3>
+                    </div>
+                </div>
+            </div>      
+                    <% } %>
+                    <script>
+                        window.addEventListener('visibilitychange', function(){
+                            if(document.hidden){
+                                document.getElementById('quizForm').submit();
+                            }
+                        } )
+                    </script>
+    </div>
+    <script>
+        // Select all clickable div elements
+        const divs = document.querySelectorAll('.mcqs-txt');
+
+        // Add event listeners to each div
+        divs.forEach(function(div) {
+            div.addEventListener('click', function() {
+                // Find the radio button within the clicked div and select it
+                const radioButton = div.querySelector('input[type="radio"]');
+                if (radioButton) {
+                    radioButton.checked = true; // Select the radio button
+                }
+            });
+        });
+    </script>
+    <%- include('./partials/footer.ejs') %>
+    </div>
+    </div>
