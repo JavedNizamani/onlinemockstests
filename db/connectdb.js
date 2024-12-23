@@ -17,7 +17,13 @@ const mongoURI = process.env.MONGODB_URI;
 
 const connectDB = async ()=>{
     try {
-        await mongoose.connect(mongoURI).then(console.log("Check URL something wrong"));
+        await mongoose.connect(mongoURI,{
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            serverSelectionTimeoutMS: 40000, // 30 seconds
+            socketTimeoutMS: 50000 // 50 seconds
+        })
+        .then(console.log("Check URL something wrong"));
         console.log("DB connected successfully..")
     } catch (err) {
         console.log(err)
