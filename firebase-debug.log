@@ -1,0 +1,46 @@
+[debug] [2024-12-22T15:55:22.610Z] ----------------------------------------------------------------------
+[debug] [2024-12-22T15:55:22.616Z] Command:       D:\installedSoftwares\Node\node.exe C:\Users\HP PROBOOK G8\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-12-22T15:55:22.616Z] CLI Version:   13.29.1
+[debug] [2024-12-22T15:55:22.617Z] Platform:      win32
+[debug] [2024-12-22T15:55:22.617Z] Node Version:  v18.17.1
+[debug] [2024-12-22T15:55:22.618Z] Time:          Sun Dec 22 2024 20:55:22 GMT+0500 (Pakistan Standard Time)
+[debug] [2024-12-22T15:55:22.618Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-12-22T15:55:22.631Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-12-22T15:55:22.632Z] > authorizing via signed-in user (javedahmednizamani@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  D:\onlineTestSeries\onlineTestSeries\online_exams
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-12-22T15:58:59.208Z] Checked if tokens are valid: true, expires at: 1734886473826
+[debug] [2024-12-22T15:58:59.208Z] Checked if tokens are valid: true, expires at: 1734886473826
+[debug] [2024-12-22T15:58:59.211Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-12-22T15:59:00.543Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-12-22T15:59:00.543Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project onlinemockstests (onlinemockstests) 
+[info] 
+=== Hosting Setup
+[debug] [2024-12-22T15:59:10.544Z] Checked if tokens are valid: true, expires at: 1734886473826
+[debug] [2024-12-22T15:59:10.544Z] Checked if tokens are valid: true, expires at: 1734886473826
+[debug] [2024-12-22T15:59:10.544Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/onlinemockstests [none]
+[debug] [2024-12-22T15:59:11.906Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/onlinemockstests 200
+[debug] [2024-12-22T15:59:11.907Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/onlinemockstests {"projectId":"onlinemockstests","projectNumber":"244651095089","displayName":"onlinemockstests","name":"projects/onlinemockstests","resources":{"hostingSite":"onlinemockstests"},"state":"ACTIVE","etag":"1_d683fac8-8920-4159-a562-62cc6ed58e81"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
