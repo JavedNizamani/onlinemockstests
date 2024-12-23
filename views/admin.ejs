@@ -18,14 +18,12 @@
 
                         <form action="/login" method="post">
                             <div class="row g-3">
-                                
                                 <div class="col-md-8">
                                 <div style="text-align: right; color: rgb(252, 69, 69);">
                                     <% if(email) { %>
                                         <%= inCorrectEmail %>
                                       <% } %> 
                                     </div>
-
                                     <div class="alignment no-baffle">
                                     <label for="email" class="admin-label">Email: </label>
                                     <input type="email" class="form-control" name="email" required>
@@ -37,15 +35,12 @@
                                     <input type="password" class="form-control mt-2" id="password" name="password" minlength="8" required>
                                 </div>
                                 </div>
-                                
                             </div>
                             <div class="alignment no-baffle">
-                            
                             <button class="btn btn-primary mt-2 admin-label" type="submit">LOGIN</button>
                         </div>
                         </form>
                     </div>
-                    
                 </div>
             </div>
         </div>
