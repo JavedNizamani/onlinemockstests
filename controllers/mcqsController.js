@@ -1,10 +1,7 @@
-import { mcqsDataModel } from "../models/mcqsData.js"
+import {networkingDataModel} from "../models/mcqsData.js"
 import { answerModel } from "../models/candidateAnswers.js";
 
-
-const question = mcqsDataModel;
-
-
+const question = networkingDataModel;
 
 // const mcqsController =  (async (req, res)=>{
 

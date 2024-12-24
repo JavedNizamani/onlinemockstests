@@ -11,7 +11,8 @@ const adminController = async (req, res)=>{
                 const passwordCheck = await bcrypt.compare(password, myEmail.password)
                     // bcrypt module Used Here for Password Hash
                 if( passwordCheck){
-                    res.redirect('/adminMcqs')
+                    // res.redirect('/adminMcqs')                       // redirect at adminMcqs page
+                    res.redirect('/adminSubjChoice')
                 }else{
                     return res.render('admin', {'title':'Admin', email});
                 } 

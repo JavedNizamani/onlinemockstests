@@ -10,6 +10,7 @@ import testController from '../controllers/takeTestController.js'
 import { resultController } from '../controllers/resultController.js'
 import { postMcqsData, postQuestion } from '../controllers/mcqsController.js'
 import { postRegistrations } from '../models/register.js'
+import { adminSubjChoiceController } from '../controllers/adminSubjChoiceController.js'
 
 
 
@@ -23,6 +24,7 @@ router.get('/adminMcqs', adminMcqs)
 router.get('/myResults', resultController)
 router.get('/quiz', postMcqsData)
 router.get('/takeTest', testController)
+router.get('/adminSubjChoice', adminSubjChoiceController)
 
 
 router.post('/quiz/:page', postQuestion)

@@ -11,15 +11,17 @@ const mcqsDataSchema = new mongoose.Schema({
     correctAnswer: {type: String},
 })
 
-const mcqsDataModel = mongoose.model('mcq', mcqsDataSchema)
-
-export {mcqsDataModel}
+// const mcqsDataModel = mongoose.model('mcq', mcqsDataSchema)                 // Test/Previous mcqs database
+// export {mcqsDataModel}                                                  //exporting previous mcqs model
+const networkingDataModel = mongoose.model('networking', mcqsDataSchema)        // New/ Networking subject database
+export {networkingDataModel}
 
 const postMcqsData = async (req, res)=>{
     try{
         const {myQuestion, optionA, optionB, optionC, optionD, optionE, correctAnswer} = req.body
      
-                const mcqs = new mcqsDataModel({
+                // const mcqs = new mcqsDataModel({                        // previous mcqs model
+                const networkingMcqs = new networkingDataModel({
                     myQuestion,
                     optionA,
                     optionB,
@@ -28,11 +30,9 @@ const postMcqsData = async (req, res)=>{
                     optionE,
                     correctAnswer,
                 })
-                const result =  mcqs.save()
+                const result =  networkingMcqs.save()
         // console.log(result)
-            
-
-        res.render('home',{'title':'Home'})
+        res.render('adminMcqs',{'title':'AdminMcqs'})
     }catch(error){
         console.log(error)
     }
