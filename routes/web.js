@@ -8,9 +8,12 @@ import { adminController } from '../controllers/adminController.js'
 import { adminMcqs } from '../controllers/adminMcqs.js'
 import testController from '../controllers/takeTestController.js'
 import { resultController } from '../controllers/resultController.js'
+import { cppResultController } from '../controllers/cppResultController.js'
 import { postMcqsData, postQuestion } from '../controllers/mcqsController.js'
 import { postCPPMcqsData, postCPPQuestion } from '../controllers/cppMcqsController.js'
 import { postRegistrations } from '../models/register.js'
+
+import underConstruction from '../middlewares/uc-middleware.js'
 
 
 
@@ -23,8 +26,10 @@ router.get('/contacts', contactsController)
 router.get('/admin', adminController)
 router.get('/adminMcqs', adminMcqs)
 router.get('/myResults', resultController)
+router.get('/cppResults',cppResultController)
 router.get('/quiz', postMcqsData)
 router.get('/cppQuiz', postCPPMcqsData)
+router.get('/siteuc', underConstruction)
 
 
 

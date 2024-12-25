@@ -7,6 +7,7 @@ const answerSchema = new mongoose.Schema({
 })
 
 const answerModel = mongoose.model('CandidateAnswer', answerSchema);
+const cppAnswerModel = mongoose.model('cppanswer', answerSchema)
 
-export{ answerModel }
+export{ answerModel, cppAnswerModel }
 

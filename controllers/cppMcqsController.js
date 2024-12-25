@@ -1,6 +1,6 @@
 
 import {cppDataModel} from "../models/mcqsData.js"
-import { answerModel } from "../models/candidateAnswers.js";
+import { cppAnswerModel } from "../models/candidateAnswers.js";
 
 const question = cppDataModel;
 
@@ -39,7 +39,7 @@ const postCPPMcqsData = async (req, res)=>{
         // await answer.save();
 
 
-        await answerModel.updateOne(
+        await cppAnswerModel.updateOne(
             { page: page }, // Find the document based on the page number
             {
                 $set: { answer: selectedAnswer } // Update the answer field

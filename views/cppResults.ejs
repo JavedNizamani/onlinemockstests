@@ -1,0 +1,87 @@
+<%- include('./partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+        <%- include('./partials/sideBar.ejs',{page_name:'myResults'}) %>
+            </div>
+        <div class="col-sm-10">
+            <!--Main Content-->
+            <div class="container mt-5">
+                <h1 class="text-warning mb-5 border-bottom">YOUR RESULT</h1>
+
+    <% let pass = "Pass" %>
+    <% let fail = "Fail" %>
+    <% let passingCriteria = 70 %>
+    <% correctAns = 0 %>
+    <% wrongAns = 0 %>
+    <% eachQuestion = 2 %>
+    <% var addNegative %>
+    <% var totalWrong %>
+    <% var score %>
+    <% k=0 %>
+
+        <% while( k< dynamicArrayCorrectAns.length ) { %>
+        
+            <% if( dynamicArrayCorrectAns[k] == dynamicArrayCandidateAns[k]  ) { %>
+                <%  correctAns = correctAns+1 %>
+                <% } else { %>
+                    <% wrongAns = wrongAns+ 1 %>
+                <% } %>
+                <% k++ %>
+            <% } %>
+            
+            <table class="table caption-top" id="table-txt">
+                <thead>
+                  <tr>
+                    <th id="table-txt">Name</th>
+                    <td id="table-txt"><%= userName %></td>
+                    <th id="table-txt">Email</th>
+                    <td id="table-txt"><%= userEmail %></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th id="table-txt">Total Questions</th>
+                    <td id="table-txt"><%= wrongAns + correctAns %></td>
+                    <th id="table-txt">Correct Answers</th>
+                    <td id="table-txt"><%= correctAns %></td>
+                  </tr>
+                  <tr>
+                    <th id="table-txt">Wrong Answers</th>
+                    <td id="table-txt"><%= wrongAns %></td>
+                    <th id="table-txt">Sum of Minus Marks</th>
+                    <td id="table-txt"><%= addNegative = wrongAns * 0.5 %></td>
+                  </tr>
+                  <tr>
+                    <th id="table-txt">Marks Deductions</th>
+                    <td id="table-txt"><%= totalWrong = addNegative + (eachQuestion * wrongAns) %></td>
+                    <th id="table-txt">Required Passing Percentage</th>
+                    <td id="table-txt"><%= passingCriteria %> %</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th id="table-txt" style="font-size: 1.3rem;">Score</th>
+                        <td id="table-txt" style="font-size: 1.2rem;">
+                        <%=  score = Math.ceil((( ((wrongAns + correctAns) * eachQuestion) - totalWrong) * 100)/ ((wrongAns + correctAns)*eachQuestion) )   %> %</td>
+                        <th id="table-txt">Result:</th>
+                        <td id="table-txt" style="font-size: 1.2rem;">
+                            <% if((( ((wrongAns + correctAns) * eachQuestion) - totalWrong) * 100)/ ((wrongAns + correctAns)*eachQuestion) >= passingCriteria) {%>
+                                <p style="color: green;"><%= pass %></p>
+                            <% } else { %>
+                            <p style="color:red;"><%= fail %></p>
+                            <% } %>
+                        </td>
+                    </tr>
+                    
+                </tfoot>
+              </table>
+    
+</div>
+    </div>
+        </div>
+            </div>
+            
+
+
+<%- include('./partials/footer.ejs') %>
