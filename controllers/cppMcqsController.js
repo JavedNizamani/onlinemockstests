@@ -1,9 +1,11 @@
-import {networkingDataModel} from "../models/mcqsData.js"
+
+import {cppDataModel} from "../models/mcqsData.js"
 import { answerModel } from "../models/candidateAnswers.js";
 
-const question = networkingDataModel;
+const question = cppDataModel;
 
-const postMcqsData = async (req, res)=>{
+
+const postCPPMcqsData = async (req, res)=>{
     try{
         const page = parseInt(req.query.page) || 1;
         const limit = 1;
@@ -15,14 +17,14 @@ const postMcqsData = async (req, res)=>{
 
     //    console.log(questions)
 
-       res.render('quiz', {'title':'Quiz', questions, currentPage:page, totalPages})
+       res.render('cppQuiz', {'title':'C++', questions, currentPage:page, totalPages})
         
     }catch(error){
         console.log(error)
     }
 }
 
-    const postQuestion = ('/quiz/:page',async(req, res)=>{
+    const postCPPQuestion = ('/cppQuiz/:page',async(req, res)=>{
 
         const page = parseInt(req.params.page) || 1;
         const selectedAnswer = req.body.answer;
@@ -52,7 +54,7 @@ const postMcqsData = async (req, res)=>{
         console.log(`Selected answer: ${selectedAnswer}`);
     
         // Redirect to the next question page
-        res.redirect(`/quiz?page=${page + 1}` );
+        res.redirect(`/cppQuiz?page=${page + 1}` );
     })
 
-export { postMcqsData, postQuestion }
+export { postCPPMcqsData, postCPPQuestion }

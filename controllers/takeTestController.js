@@ -9,7 +9,7 @@ const testController = async (req, res)=>{
                     return res.render('takeTest', {'title':'Test', email});
                 }else{
                     req.session.userData = userData       //Store myEmail in Session
-                    res.redirect('/quiz')
+                    res.redirect('/home')
                 }   
 }catch(error){
         res.status(404).json({Msg: `Error ${error}`});

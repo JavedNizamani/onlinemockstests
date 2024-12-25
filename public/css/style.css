@@ -61,7 +61,7 @@ textarea::placeholder{
 
 input::placeholder{
   text-align: center;
-  color: darkred;
+  color: rgb(240, 239, 239);
   font-size: 2rem;
   font-style: italic;
 }

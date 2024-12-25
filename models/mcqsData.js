@@ -16,11 +16,16 @@ const mcqsDataSchema = new mongoose.Schema({
 const networkingDataModel = mongoose.model('networking', mcqsDataSchema)        // New/ Networking subject database
 export {networkingDataModel}
 
+const cppDataModel = mongoose.model('cpp', mcqsDataSchema)
+export {cppDataModel}
+
+
 const postMcqsData = async (req, res)=>{
     try{
-        const {myQuestion, optionA, optionB, optionC, optionD, optionE, correctAnswer} = req.body
-     
-                // const mcqs = new mcqsDataModel({                        // previous mcqs model
+        const {mySubject, myQuestion, optionA, optionB, optionC, optionD, optionE, correctAnswer} = req.body
+
+        console.log(mySubject)
+            if(mySubject === 'NETWORKING'){
                 const networkingMcqs = new networkingDataModel({
                     myQuestion,
                     optionA,
@@ -31,7 +36,19 @@ const postMcqsData = async (req, res)=>{
                     correctAnswer,
                 })
                 const result =  networkingMcqs.save()
-        // console.log(result)
+            }
+            if(mySubject === 'C++'){
+                const cppMcqs = new cppDataModel({
+                    myQuestion,
+                    optionA,
+                    optionB,
+                    optionC,
+                    optionD,
+                    optionE,
+                    correctAnswer,
+                })
+                const result =  cppMcqs.save()
+            }
         res.render('adminMcqs',{'title':'AdminMcqs'})
     }catch(error){
         console.log(error)

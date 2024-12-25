@@ -1,4 +1,6 @@
+
 const adminMcqs = (req, res)=>{
-    res.render('adminMcqs',{'title':'AdminMcqs'})
+    let mySubjectsArr = ['Networking','Java']
+    res.render('adminMcqs', { 'title': 'AdminMcqs', mySubjectsArr});
 }
 export {adminMcqs}

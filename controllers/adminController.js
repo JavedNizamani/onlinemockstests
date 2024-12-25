@@ -12,7 +12,7 @@ const adminController = async (req, res)=>{
                     // bcrypt module Used Here for Password Hash
                 if( passwordCheck){
                     // res.redirect('/adminMcqs')                       // redirect at adminMcqs page
-                    res.redirect('/adminSubjChoice')
+                    res.redirect('/adminMcqs')
                 }else{
                     return res.render('admin', {'title':'Admin', email});
                 } 
