@@ -22,7 +22,7 @@ const postRegistrations = async(req, res)=>{
         const result = registration.save()
         console.log(result)
 
-            res.redirect('/takeTest')
+            res.redirect('/home')
 
     }catch(error){
         console.log(error)
