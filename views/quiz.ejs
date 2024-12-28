@@ -8,7 +8,10 @@
             <!--Main Content-->
             <% if (questions.length > 0) { %>
             <div class="container mt-5">
-                <h2 class="text-warning mb-5 border-bottom">MULTIPLE CHOICE QUESTIONS</h2>
+                <div class="text-warning mb-5 border-bottom">
+                    <h1 >MULTIPLE CHOICE QUESTIONS   ( <%= currentPage %> / <%= totalPages %> )</h1>
+                </div>
+                
                 <div class="row text-white mb-5">
                     <div class="col-sm-9 mb-5">
                     <form action="/quiz/<%= currentPage %>" method="post" id="quizForm">
