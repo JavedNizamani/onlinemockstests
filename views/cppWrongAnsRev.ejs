@@ -1,4 +1,20 @@
 <%- include('./partials/header.ejs') %>
+<style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0px;
+      border-radius: 20px;
+    }   
+    td span{
+        margin-right: 20px;
+    }
+    td{
+        font-size: 1.1rem;
+    }
+    
+
+  </style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
@@ -9,35 +25,31 @@
             <% if (questions.length > 0) { %>
             <div class="container mt-5">
                 <h2 class="text-warning border-bottom">QUESTIONS REVIEW</h2>  
-                            <div class="">
-                                           <table class="table shadow-lg" style="background-color: rgb(196, 198, 193); border-radius: 20px;" >
+                                           <table class="table shadow-lg" >
+                                            <% questions.forEach((mcq)=>{ %>
                                                <tbody>
                                                     <tr>
-                                                        <td><% questions.forEach((mcq)=>{ %></td>
+                                                        <td style="color: rgb(246, 252, 252); font-size: 1.2rem; padding-left: 30px;"><%= mcq.myQuestion %> </td>
                                                     </tr>
                                                     <tr>
-                                                        <td><%= mcq.myQuestion %> </td>
+                                                        <td style="background-color: #c2c1c1; padding-left: 40px;"><span>A.</span> <%= mcq.optionA %></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>A.<%= mcq.optionA %></td>
+                                                        <td style="background-color: #c2c1c1; padding-left: 40px;"><span>B.</span><%= mcq.optionB %></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>B.<%= mcq.optionB %></td>
+                                                        <td style="background-color: #c2c1c1; padding-left: 40px;"><span>C.</span><%= mcq.optionC %></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>C.<%= mcq.optionC %></td>
+                                                        <td style="background-color: #c2c1c1; padding-left: 40px;"><span> D.</span><%= mcq.optionD %></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>D.<%= mcq.optionD %></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>E.<%= mcq.optionE %></td>
+                                                        <td style="background-color: #c2c1c1; padding-left: 40px;"><span> E.</span><%= mcq.optionE %></td>
                                                     </tr>
                                             
                                                     <% }) %>
                                                 </tbody>
-                                            </table>
-                                       </div> 
+                                            </table> 
                                             <% } %> 
                         
         </div>         
