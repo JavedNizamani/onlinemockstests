@@ -1,0 +1,66 @@
+<%- include('./partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <%- include('./partials/sideBar.ejs',{page_name:'quiz'}) %>
+        </div>
+        <div class="col-sm-10">
+            <!--Main Content-->
+            <% if (questions.length > 0) { %>
+            <div class="container mt-5">
+                <h2 class="text-warning mb-5 border-bottom">QUESTIONS REVIEW</h2>
+                <div class="row text-white mb-5">
+                    <div class="col-sm-9 mb-5">
+                            <div class="row g-3">
+                                <div class="col-md-12" >
+                                    <%= currentPage %>.
+                                    <% questions.forEach((mcq)=>{ %>
+                                        <%= mcq.myQuestion %>
+                                    <% }) %> 
+                        
+                                </div>
+                            </div>
+                                <div class="col-sm-12 mcqs-txt">
+                                    
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3>A. <%= mcq.optionA %></h3>
+                                            <% }) %> </label>
+                                
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3>B. <%= mcq.optionB %></h3>
+                                            <% }) %> </label>
+                                            
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3>C. <%= mcq.optionC %></h3>
+                                            <% }) %> </label>
+                                        
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3>D. <%= mcq.optionD %></h3>
+                                            <% }) %> </label>
+                                       
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3>E. <%= mcq.optionE %></h3>
+                                            <% }) %>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div>
+                                            <% questions.forEach((mcq)=>{ %>
+                                                <h3>Correct Answer <%= mcq.correctAnswer %></h3>
+                                            <% }) %>
+                                            <% }%>
+                                        </div>
+                                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+            </div>
+                    
+                    
+                </div>
+            </div>      
+    </div>
+    <%- include('./partials/footer.ejs') %>
+    </div>
+    </div>
