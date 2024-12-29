@@ -13,6 +13,7 @@ import { postMcqsData, postQuestion } from '../controllers/mcqsController.js'
 import { postCPPMcqsData, postCPPQuestion } from '../controllers/cppMcqsController.js'
 import { postRegistrations } from '../models/register.js'
 import { fetchWrongAnswers } from '../controllers/cppWrongAnsRevController.js'
+import { fetchWrongAnswersNetworking } from '../controllers/networkingWrongAnsRevController.js'
 
 import underConstruction from '../middlewares/uc-middleware.js'
 
@@ -31,6 +32,7 @@ router.get('/cppResults',cppResultController)
 router.get('/quiz', postMcqsData)
 router.get('/cppQuiz', postCPPMcqsData)
 router.get('/cppWrongAnsRev', fetchWrongAnswers)
+router.get('/networkingWrongAnsRev', fetchWrongAnswersNetworking)
 router.get('/siteuc', underConstruction)
 
 

@@ -28,7 +28,6 @@ const postCPPMcqsData = async (req, res)=>{
 
         const page = parseInt(req.params.page) || 1;
         const selectedAnswer = req.body.answer;
-    
        // Handle saving or processing of the selected answer here (e.g., save to session or database)
 
         // const answer = new answerModel({
