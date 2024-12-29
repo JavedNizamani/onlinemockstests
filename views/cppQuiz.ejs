@@ -1,4 +1,31 @@
 <%- include('./partials/header.ejs') %>
+<style>
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    border-radius: 20px;
+    table-layout: fixed;
+  }
+  
+  td {
+    font-size: 1.1rem;
+    padding-left: 50px;  /* Ensure the padding-left is 50px */
+    word-wrap: break-word;  /* Ensure long words wrap to the next line */
+    overflow-wrap: break-word; /* Same as word-wrap for newer standards */
+    white-space: normal; /* Ensure text can wrap naturally */
+  }
+  
+  td span {
+    margin-right: 20px;
+  }
+  
+  td {
+    vertical-align: top; /* Aligns text to the top */
+  }
+  
+  </style>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
@@ -9,62 +36,52 @@
             <% if (questions.length > 0) { %>
             <div class="container mt-5">
                 <h2 class="text-warning mb-5 border-bottom">MULTIPLE CHOICE QUESTIONS ( <%= currentPage %> / <%= totalPages %> )</h2>
-                <div class="row text-white mb-5">
-                    <div class="col-sm-9 mb-5">
+                <table class="table shadow-lg" >
                     <form action="/cppQuiz/<%= currentPage %>" method="post" id="quizForm">
-                            <div class="row g-3">
-                                <div class="col-md-12">
-                                    <% questions.forEach((mcq)=>{ %>
-                                        <h3><%= mcq.myQuestion %></h3>
-                                    <% }) %> 
-                                </div>
-                            </div>
-                                <div class="col-sm-12">
-                                    <div class="mcqs-txt">
-                                        <% questions.forEach((mcq)=>{ %>
-                                        <input type="radio" name="answer" value="A" required><label for="A">
-                                            <h3> <%= mcq.optionA %></h3>
-                                            <% }) %> </label>
-                                    </div>
-                                </div>        
-                                    <div class="col-sm-12">
-                                        <div class="mcqs-txt">
-                                            <input type="radio" name="answer" value="B" required><label for="B">
-                                            <% questions.forEach((mcq)=>{ %>
-                                                <h3> <%= mcq.optionB %></h3>
-                                            <% }) %> </label>
-                                        </div>
-                                    </div>   
-                                    <div class="col-sm-12">
-                                        <div class="mcqs-txt">
-                                            <input type="radio" name="answer" value="C" required><label for="C">
-                                            <% questions.forEach((mcq)=>{ %>
-                                                <h3> <%= mcq.optionC %></h3>
-                                            <% }) %> </label>
-                                        </div>
-                                    </div>        
-                                    <div class="col-sm-12">
-                                        <div class="mcqs-txt">
-                                            <input type="radio" name="answer" value="D" required><label for="D">
-                                            <% questions.forEach((mcq)=>{ %>
-                                                <h3> <%= mcq.optionD %></h3>
-                                            <% }) %> </label>
-                                        </div>
-                                    </div>   
-                                    <div class="col-sm-12">
-                                        <div class="mcqs-txt">
-                                            <input type="radio" name="answer" value="E" required><label for="E">
-                                            <% questions.forEach((mcq)=>{ %>
-                                                <h3> <%= mcq.optionE %></h3>
-                                            <% }) %> </label>
-                                        </div>
-                                    </div>  
-                        <div class="alignment">
+                    <tbody>
+                    <% questions.forEach((mcq)=>{ %>
+                    <tr>
+                        <td style="color: rgb(246, 252, 252); font-size: 1.2rem; padding-left: 30px;"><%= mcq.myQuestion %> </td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #c2c1c1; padding-left: 40px; vertical-align: top;padding-top:0px;">
+                        <input type="radio" name="answer" value="A" required>
+                        <span>A.</span> <%= mcq.optionA %></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #c2c1c1; padding-left: 40px; vertical-align: top;padding-top:0px;">
+                            <input type="radio" name="answer" value="B" required>
+                        <span>B.</span><%= mcq.optionB %></td>
+                    </tr>                        
+                    <tr>
+                        <td style="background-color: #c2c1c1; padding-left: 40px; vertical-align: top;padding-top:0px;">
+                            <input type="radio" name="answer" value="C" required>
+                        <span>C.</span><%= mcq.optionC %></td>
+                    </tr>
+                                    
+                    <tr>
+                        <td style="background-color: #c2c1c1; padding-left: 40px; vertical-align: top;padding-top:0px;">
+                            <input type="radio" name="answer" value="D" required>
+                            <span> D.</span><%= mcq.optionD %></td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: #c2c1c1; padding-left: 40px; vertical-align: top;padding-top:0px;">
+                            <input type="radio" name="answer" value="E" required>
+                            <span> E.</span><%= mcq.optionE %></td>
+                    </tr>
+                                           
+                    <% }) %>
+                        
+                    <tr>
+                        <td style="background-color: #c2c1c1; padding-left: 40px; vertical-align: top;padding-top:0px;">
                             <button type="submit" class="btn btn-primary admin-label">NEXT</button>
-                        </div>
+                    </tr>
+                        
+                            
+                        
+                    </tbody>
                     </form>
-                </div>
-            </div>
+                </table>
         </div>
     </div>
         </div>
