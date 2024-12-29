@@ -67,16 +67,12 @@ input::placeholder{
 }
 
 .mcqs-txt{
-  font-size: large;
-  background-color: lightgray;
-  color: black;
   border-radius: 1%;
-  padding: 1% 1% 1% 1%;
-  margin: 2.5% 0% 2.5% 0%;
 }
 
 .mcqs-txt:hover{
-  background-color: lightcoral;
+  background-color: rgb(209, 205, 164);
+  border-radius: 20px;
 }
 
 input[type="radio"] {
