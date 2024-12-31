@@ -1,4 +1,29 @@
 <%- include('./partials/header.ejs') %>
+<style>
+  table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  border-radius: 20px;
+  table-layout: fixed;
+}
+
+td {
+  font-size: 1.1rem;
+  padding-left: 50px;  /* Ensure the padding-left is 50px */
+  word-wrap: break-word;  /* Ensure long words wrap to the next line */
+  overflow-wrap: break-word; /* Same as word-wrap for newer standards */
+  white-space: normal; /* Ensure text can wrap naturally */
+}
+
+td span {
+  margin-right: 20px;
+}
+
+td {
+  vertical-align: top; /* Aligns text to the top */
+}
+  </style>
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2">
