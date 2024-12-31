@@ -70,18 +70,24 @@ td {
                   <tr>
                     <th id="table-txt">Total Questions</th>
                     <td id="table-txt"><%= wrongAns + correctAns %></td>
+                  </tr>
+                  <tr>
                     <th id="table-txt">Correct Answers</th>
                     <td id="table-txt"><%= correctAns %></td>
                   </tr>
                   <tr>
                     <th id="table-txt">Wrong Answers</th>
                     <td id="table-txt"><%= wrongAns %></td>
+                  </tr>
+                  <tr>
                     <th id="table-txt">Sum of Minus Marks</th>
                     <td id="table-txt"><%= addNegative = wrongAns * 0.5 %></td>
                   </tr>
                   <tr>
                     <th id="table-txt">Marks Deductions</th>
                     <td id="table-txt"><%= totalWrong = addNegative + (eachQuestion * wrongAns) %></td>
+                  </tr>
+                  <tr>
                     <th id="table-txt">Required Passing Percentage</th>
                     <td id="table-txt"><%= passingCriteria %> %</td>
                   </tr>
