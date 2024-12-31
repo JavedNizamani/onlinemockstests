@@ -97,6 +97,8 @@ td {
                         <th id="table-txt" style="font-size: 1.3rem;">Score</th>
                         <td id="table-txt" style="font-size: 1.2rem;">
                         <%=  score = Math.ceil((( ((wrongAns + correctAns) * eachQuestion) - totalWrong) * 100)/ ((wrongAns + correctAns)*eachQuestion) )   %> %</td>
+                    </tr>
+                    <tr>
                         <th id="table-txt">Result:</th>
                         <td id="table-txt" style="font-size: 1.2rem;">
                             <% if((( ((wrongAns + correctAns) * eachQuestion) - totalWrong) * 100)/ ((wrongAns + correctAns)*eachQuestion) >= passingCriteria) {%>
