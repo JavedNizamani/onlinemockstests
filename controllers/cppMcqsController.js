@@ -17,7 +17,7 @@ const postCPPMcqsData = async (req, res)=>{
 
     //    console.log(questions)
 
-       res.render('cppQuiz', {'title':'C++', questions, currentPage:page, totalPages})
+       res.render('cppQuiz', {'title':'G.K', questions, currentPage:page, totalPages})
         
     }catch(error){
         console.log(error)
