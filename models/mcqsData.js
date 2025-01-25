@@ -37,7 +37,7 @@ const postMcqsData = async (req, res)=>{
                 })
                 const result =  networkingMcqs.save()
             }
-            if(mySubject === 'C++'){
+            if(mySubject === 'GK'){
                 const cppMcqs = new cppDataModel({
                     myQuestion,
                     optionA,
